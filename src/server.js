@@ -22,6 +22,7 @@ const priceController = require("./controllers/price.controller")
 
 app.use('/cars', carController)
 app.use("/home", homeController);
+app.use("/", homeController);
 app.use("/search", searchController);
 app.use("/seinput", search_InputController);
 app.use("/signup", signupController )
