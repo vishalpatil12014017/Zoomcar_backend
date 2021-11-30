@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connect = require("./configs/db");
-
+require("dotenv").config()
 const app = express();
 
 app.use(express.json());
@@ -30,6 +30,6 @@ app.use("/checkout", checkoutController)
 app.use("/payment", paymentController)
 app.use("/price",priceController)
 
-app.listen(3535, async(req, res) => {
+app.listen(process.env.PORT || 3535, async(req, res) => {
     await connect();
 });
